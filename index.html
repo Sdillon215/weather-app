@@ -1,11 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Weather</title>
 </head>
+
 <body>
-    
+    <header class="jumbotron">
+        <h1 class="text-center">Weather Dashboard</h1>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="card">
+                    <p class="text-center">Search For A City</p>
+                    <nav class="navbar navbar-light bg-light">
+                        <form class="form-inline">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </nav>
+                    <div class="card" style="width: 100%;">
+                        <ul class="list-group list-group-flush">
+                            <!-- delete <li> later add dynamically -->
+                            <li class="list-group-item">city</li>
+                            <li class="list-group-item">city</li>
+                            <li class="list-group-item">city</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        <!-- delete <li> later add dynamically -->
+                        <li class="list-group-item">current city</li>
+                        <li class="list-group-item">temp</li>
+                        <li class="list-group-item">hum</li>
+                        <li class="list-group-item">wind</li>
+                        <li class="list-group-item">uv</li>
+                </div>
+                <div class="card d-flex flex-row justify-content-around">
+                    <div class="p-2">
+                        test
+                    </div>
+                    <div class="p-2">
+                        test
+                    </div>
+                    <div class="p-2">
+                        test
+                    </div>
+                    <div class="p-2">
+                        test
+                    </div>
+                    <div class="p-2">
+                        test
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="assets/js/weather.js"></script>
 </body>
+
 </html>
