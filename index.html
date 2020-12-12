@@ -20,15 +20,16 @@
                 <div class="card">
                     <p class="text-center">Search For A City</p>
                     <nav class="navbar navbar-light bg-light">
-                        <form class="form-inline">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <form class="form-inline" id="search-form">
+                            <input class="form-control mr-sm-2" id="search-input" type="search" placeholder="Search"
+                                aria-label="Search">
                             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                         </form>
                     </nav>
                     <div class="card" style="width: 100%;">
                         <ul class="list-group list-group-flush">
                             <!-- delete <li> later add dynamically -->
-                            <li class="list-group-item">city</li>
+                            <li class="list-group-item" id="city-one">city</li>
                             <li class="list-group-item">city</li>
                             <li class="list-group-item">city</li>
                         </ul>
@@ -39,11 +40,10 @@
                 <div class="card">
                     <ul class="list-group list-group-flush">
                         <!-- delete <li> later add dynamically -->
-                        <li class="list-group-item">current city</li>
-                        <li class="list-group-item">temp</li>
-                        <li class="list-group-item">hum</li>
-                        <li class="list-group-item">wind</li>
-                        <li class="list-group-item">uv</li>
+                        <li class="list-group-item" id="display-city">current city</li>
+                        <li class="list-group-item" id="display-temp">temp</li>
+                        <li class="list-group-item" id="display-hum">humidity</li>
+                        <li class="list-group-item" id="display-wind">wind</li>
                 </div>
                 <div class="card d-flex flex-row justify-content-around">
                     <div class="p-2">
