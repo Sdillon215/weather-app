@@ -5,11 +5,11 @@ var apiKey = "c845404333af03f8f793eadcc58eeb29";
 var searchSubmitHandler = function (event) {
     event.preventDefault();
     var city = searchInputEl.value.trim();
-    // console.log(city);
     if (city) {
         getCurrentWeather(city);
         weatherStorage(city);
         getFiveWeather(city);
+        clearDiv();
     } else {
         alert("Please enter a valid city.");
     }
@@ -45,13 +45,8 @@ var getFiveWeather = function (city) {
                         var fiveWind = data.list[i].wind.speed;
                         var fiveIcon = data.list[i].weather.icon;
 
-                        console.log(fiveDate);
-
-                        // create div for card, <p> for date, img for weather icon, <p> for wind, <p> for hum, <p> for temp, add bootstrap classes to each, 
-                        // pull data for each item set inner.html or textContent for each tag
-                        // append card to #fiveCard then append the rest to the card
                         var cardEl = document.createElement("div");
-                        cardEl.classList.add("card");
+                        cardEl.classList.add("card", "cityCard");
                         var dateEl = document.createElement("p");
                         dateEl.classList.add("date-element");
                         var imgEl = document.createElement("img");
@@ -75,8 +70,6 @@ var getFiveWeather = function (city) {
                         humEl.textContent = fiveHum;
                         windEl.textContent = fiveWind;
                         imgEl.textContent = fiveIcon;
-                        console.log(data);
-
                     }
                 });
             }
@@ -86,7 +79,6 @@ var getFiveWeather = function (city) {
 var renderData = function (city, wind, temp, hum) {
     temp = ((temp - 273.15) * 1.8) + 32;
     var fahTemp = temp.toFixed(1);
-    document.getElementById("city-one").innerHTML = city;
     document.getElementById("display-city").innerHTML = city;
     document.getElementById("display-temp").innerHTML = "Temperature: " + fahTemp;
     document.getElementById("display-hum").innerHTML = "Humidity: " + hum + "%";
@@ -94,19 +86,16 @@ var renderData = function (city, wind, temp, hum) {
 };
 
 var weatherStorage = function (city) {
+    var listEl = document.createElement("li");
+    document.getElementById("cityList").appendChild(listEl);
+    listEl.textContent = city;
     // add city to localStorage
+    localStorage.setItem("city", JSON.stringify(city));
+
+};
+
+var clearDiv = function () {
+    $(".cityCard").remove();
 }
 
 searchFormEl.addEventListener("submit", searchSubmitHandler);
-
-
-// var apiUrlFive = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey;
-//     console.log(apiUrlFive);
-// fetch(apiUrlFive)
-//     .then(function(response) {
-//         if (response.ok) {
-//             response.json().then(function(data) {
-//                 console.log(apiUrlFive);
-//             })
-//         }
-//     })
